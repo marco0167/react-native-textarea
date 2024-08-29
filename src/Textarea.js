@@ -46,13 +46,13 @@ export default class Textarea extends PureComponent<Props, State> {
   }
 
   _renderCount() {
-    const { maxLength, } = this.props;
+    const { maxLength, countStyle} = this.props;
     const { count, } = this.state;
 
     if (!maxLength) return null;
 
     return (
-      <Text style={styles.count}>
+      <Text style={[styles.count, countStyle]}>
         {`${count}/${maxLength}`}
       </Text>
     );
